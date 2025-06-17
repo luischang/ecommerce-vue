@@ -1,10 +1,10 @@
 <template>
   <div class="product-page">
     <div class="product-filter q-ml-md q-mr-xl">
-      <ProductFilter />
+      <ProductFilter @category-changed="actualizarCategoria" />
     </div>
     <div class="product-list">
-      <ProductList />
+      <ProductList :categoriaFiltrada="categoriaFiltrada" />
     </div>
 
   </div>
@@ -35,9 +35,16 @@ export default {
   data() {
     return {
       // Aquí puedes definir los datos necesarios para la página de productos
+      categoriaFiltrada: null,
     }
   },
   methods: {
+    actualizarCategoria(categoriaId) {
+      // Aquí puedes manejar el cambio de categoría, por ejemplo, filtrando productos
+      console.log('Categoría seleccionada:', categoriaId);
+      this.categoriaFiltrada = categoriaId;
+      // Puedes emitir un evento o realizar una acción para actualizar la lista de productos
+    },
     // Aquí puedes definir los métodos necesarios para la página de productos
   }
 }

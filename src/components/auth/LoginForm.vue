@@ -4,28 +4,14 @@
       <q-card-section>
         <div class="text-h5 text-center q-mb-md">Iniciar Sesión</div>
         <q-form @submit.prevent="iniciarSesion">
-          <q-input
-            v-model="email"
-            label="Email"
-            type="email"
-            filled
-            class="q-mb-md"
-            :rules="[(val) => !!val || 'El email es requerido']"
-          />
-          <q-input
-            v-model="password"
-            label="Contraseña"
-            type="password"
-            filled
-            class="q-mb-md"
-            :rules="[(val) => !!val || 'La contraseña es requerida']"
-          />
+          <q-input v-model="email" label="Email" type="email" filled class="q-mb-md"
+            :rules="[(val) => !!val || 'El email es requerido']" />
+          <q-input v-model="password" label="Contraseña" type="password" filled class="q-mb-md"
+            :rules="[(val) => !!val || 'La contraseña es requerida']" />
           <q-btn label="Login" color="primary" type="submit" class="full-width q-mb-md" />
         </q-form>
         <div class="text-center">
-          <router-link to="/register" class="register-link"
-            >¿No tienes cuenta? Regístrate aquí</router-link
-          >
+          <router-link to="/register" class="register-link">¿No tienes cuenta? Regístrate aquí</router-link>
         </div>
       </q-card-section>
     </q-card>
@@ -36,6 +22,7 @@
 .full-width {
   width: 100%;
 }
+
 .login-container {
   display: flex;
   flex-direction: column;
@@ -43,11 +30,13 @@
   justify-content: center;
   min-height: 70vh;
 }
+
 .form-box {
   min-width: 320px;
   max-width: 400px;
   width: 100%;
 }
+
 .register-link {
   color: #1976d2;
   text-decoration: underline;
@@ -82,7 +71,7 @@ export default {
             type: 'positive',
             message: 'Inicio de sesión exitoso.',
           })
-          this.$router.push('/') // Redirigir al dashboard después del login
+          this.$router.push('/product') // Redirigir al listado de productos después del login
         })
         .catch((error) => {
           console.error('Error en el inicio de sesión:', error)
