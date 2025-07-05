@@ -4,14 +4,28 @@
       <q-card-section>
         <div class="text-h5 text-center q-mb-md">Iniciar Sesión</div>
         <q-form @submit.prevent="iniciarSesion">
-          <q-input v-model="email" label="Email" type="email" filled class="q-mb-md"
-            :rules="[(val) => !!val || 'El email es requerido']" />
-          <q-input v-model="password" label="Contraseña" type="password" filled class="q-mb-md"
-            :rules="[(val) => !!val || 'La contraseña es requerida']" />
-          <q-btn label="Login" color="primary" type="submit" class="full-width q-mb-md" />
+          <q-input
+            v-model="email"
+            label="Correo"
+            type="email"
+            filled
+            class="q-mb-md"
+            :rules="[(val) => !!val || 'El email es requerido']"
+          />
+          <q-input
+            v-model="password"
+            label="Contraseña"
+            type="password"
+            filled
+            class="q-mb-md"
+            :rules="[(val) => !!val || 'La contraseña es requerida']"
+          />
+          <q-btn label="Ingresar" color="primary" type="submit" class="full-width q-mb-md" />
         </q-form>
         <div class="text-center">
-          <router-link to="/register" class="register-link">¿No tienes cuenta? Regístrate aquí</router-link>
+          <router-link to="/register" class="register-link"
+            >¿No tienes cuenta? Regístrate aquí</router-link
+          >
         </div>
       </q-card-section>
     </q-card>
